@@ -20,22 +20,24 @@ const CardPage = () => {
 
 
     return (
-        <div>
-            {cards.isLoading ? <div>Loading</div> : null}
-            {cards.isFilterEnable ?
-                cards.cards.map(card => {
-                    return <Card key={card.char_id}
-                                 card={card}
-                                 toggleLike={toggleLike}
-                                 deleteCard={deleteCard}/>
-                }) :
-                cards.cards.filter(card => card.isLiked).map(card => {
-                    return <Card key={card.char_id}
-                                 card={card}
-                                 toggleLike={toggleLike}
-                                 deleteCard={deleteCard}/>
-                })
-            }
+        <div className={'p-8'}>
+            {cards.isLoading ? <div className={'absolute h-screen w-screen bg-slate-500 text-amber-50'}>Loading</div> : null}
+            <div className={'grid grid-cols-4 gap-10'}>
+                {(cards.isFilterEnable && (cards.cards.length > 0)) ?
+                    cards.cards.map(card => {
+                        return <Card key={card.char_id}
+                                     card={card}
+                                     toggleLike={toggleLike}
+                                     deleteCard={deleteCard}/>
+                    }) :
+                    cards.cards.filter(card => card.isLiked).map(card => {
+                        return <Card key={card.char_id}
+                                     card={card}
+                                     toggleLike={toggleLike}
+                                     deleteCard={deleteCard}/>
+                    })
+                }
+            </div>
         </div>
     );
 };
