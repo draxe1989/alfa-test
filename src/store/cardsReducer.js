@@ -42,10 +42,12 @@ export const cardsReduser = (state = defaultState, action) => {
         case DELETE_CARD:
             return {...state, cards: state.cards.filter(item => item.id !== action.payload)};
         case TOGGLE_LIKE:
-            return {
-                ...state,
-                cards: state.cards.map(item => (item.id === action.payload) ? item : {...item, isLiked: !item.isLiked})
-            };
+            return {...state, cards: state.cards.map(card=>{
+                    if (card.id === action.payload) {
+                        card.isLiked = !card.isLiked
+                    }
+                    return card
+                })}
         default:
             return state;
     }

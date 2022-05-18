@@ -4,8 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {deleteCardAction, toggleLikeAction} from "../../store/cardsReducer";
 
 const CardPage = () => {
-    const cards = useSelector(state => state.cards.cards);
-    const isFilterEnable = useSelector(state => state.cards.isFilterEnable)
+    const cards = useSelector(state => state.cards);
     const dispatch = useDispatch();
     const deleteCard = (id) => {
         console.log(id)
@@ -16,17 +15,16 @@ const CardPage = () => {
         dispatch(toggleLikeAction(id))
     }
 
-
     return (
         <div>
-            {isFilterEnable ?
-                cards.map(card => {
+            {cards.isFilterEnable ?
+                cards.cards.map(card => {
                     return <Card key={card.id}
                                  card={card}
                                  toggleLike={toggleLike}
                                  deleteCard={deleteCard}/>
                 }) :
-                cards.filter(card => card.isLiked).map(card => {
+                cards.cards.filter(card => card.isLiked).map(card => {
                     return <Card key={card.id}
                                  card={card}
                                  toggleLike={toggleLike}
