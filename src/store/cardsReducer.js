@@ -1,49 +1,32 @@
-import image from "../assets/Image.jpg";
-
 const   ENABLE_FILTER = 'ENABLE_FILTER',
         DISABLE_FILTER = 'DISABLE_FILTER',
-        FETCH_CARDS = 'FETCH_CARDS',
+        LOAD_CARDS = 'LOAD_CARDS',
         DELETE_CARD = 'DELETE_CARD',
-        TOGGLE_LIKE = 'TOGGLE_LIKE'
+        TOGGLE_LIKE = 'TOGGLE_LIKE',
+        TOGGLE_LOADING = 'TOGGLE_LOADING';
 
 
 const defaultState = {
     isFilterEnable: true,
-    cards: [
-        {
-            id: 1,
-            image: image,
-            description: 'consectetur adipisicing elit. Ea, incidunt.',
-            isLiked: false,
-        },
-        {
-            id: 2,
-            image: image,
-            description: 'Lorem adipisicing elit. Ea, incidunt.',
-            isLiked: false,
-        },
-        {
-            id: 3,
-            image: image,
-            description: 'Ea, incidunt.',
-            isLiked: true,
-        },
-    ],
+    cards: [],
+    isLoading: false,
 }
 
-export const cardsReduser = (state = defaultState, action) => {
+export const cardsReducer = (state = defaultState, action) => {
     switch (action.type) {
         case ENABLE_FILTER:
             return {...state, isFilterEnable: true};
         case DISABLE_FILTER:
             return {...state, isFilterEnable: false};
-        case FETCH_CARDS:
+        case LOAD_CARDS:
             return {...state, cards: action.payload};
+        case TOGGLE_LOADING:
+            return {...state, isLoading: !state.isLoading};
         case DELETE_CARD:
-            return {...state, cards: state.cards.filter(item => item.id !== action.payload)};
+            return {...state, cards: state.cards.filter(item => item.char_id !== action.payload)};
         case TOGGLE_LIKE:
             return {...state, cards: state.cards.map(card=>{
-                    if (card.id === action.payload) {
+                    if (card.char_id === action.payload) {
                         card.isLiked = !card.isLiked
                     }
                     return card
@@ -55,6 +38,7 @@ export const cardsReduser = (state = defaultState, action) => {
 
 export const enableFilterAction = () => ({type: ENABLE_FILTER})
 export const disableFilterAction = () => ({type: DISABLE_FILTER})
-export const fetchCardsAction = (payload) => ({type: FETCH_CARDS, payload})
+export const toggleIsLoadingAction = () => ({type: TOGGLE_LOADING})
+export const loadCardsAction = (payload) => ({type: LOAD_CARDS, payload})
 export const deleteCardAction = (payload) => ({type: DELETE_CARD, payload})
 export const toggleLikeAction = (payload) => ({type: TOGGLE_LIKE, payload})
