@@ -1,11 +1,14 @@
 import FilterButtonContainer from "./components/FilterButton/FilterButtonContainer";
-import CardPage from "./components/CardPage/CardPage";
+import CardPageContainer from "./components/CardPage/CardPageContainer";
+import Preloader from "./components/Preloader/Preloader";
+import background from '../src/assets/background.png'
 
 function App() {
     return (
-        <div>
+        <div className={'bg-fixed min-h-screen'} style={{backgroundImage: "url("+background +")"}}>
+            <Preloader/>
             <FilterButtonContainer/>
-            <CardPage/>
+            <CardPageContainer/>
         </div>
 
     );

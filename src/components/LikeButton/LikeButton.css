@@ -1,4 +1,8 @@
-path:first-child {
-    fill: rgba(154, 205, 50, 0);
+.withoutLike > div > svg  > path:first-child {
+    fill: none;
+}
+
+.withLike > div > svg  > path:first-child {
+    fill: #d97706;
 }
 

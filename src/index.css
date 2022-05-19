@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: breakingBad;
+        font-weight: 400;
+        src: url(./fonts/heart-breaking-bad.otf) format("opentype");
+    }
+}

@@ -9,7 +9,7 @@ const   ENABLE_FILTER = 'ENABLE_FILTER',
 const defaultState = {
     isFilterEnable: true,
     cards: [],
-    isLoading: false,
+    isLoading: true,
 }
 
 export const cardsReducer = (state = defaultState, action) => {
