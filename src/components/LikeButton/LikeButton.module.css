@@ -1,0 +1,16 @@
+.likeButton {
+    @apply transition-all transform scale-100 hover:scale-110 active:scale-105;
+}
+
+.likeButton > div{
+    @apply h-12 w-12;
+}
+
+.withoutLike > div > svg  > path:first-child {
+    fill: none;
+}
+
+.withLike > div > svg  > path:first-child {
+    fill: #d97706;
+}
+

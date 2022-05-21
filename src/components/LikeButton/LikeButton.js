@@ -1,12 +1,12 @@
 import React from 'react';
 import {ReactSVG} from "react-svg";
 import likeSvg from '../../assets/like.svg'
-import './LikeButton.css'
+import s from './LikeButton.module.css'
 
 const LikeButton = ({callback, isLiked}) => {
     return (
-        <button className={'likeButton'} onClick={callback}>
-            <ReactSVG className={isLiked ? ' withLike': ' withoutLike'} src={likeSvg}/>
+        <button className={s.likeButton} onClick={callback}>
+            <ReactSVG className={isLiked ? s.withLike: s.withoutLike} src={likeSvg}/>
         </button>
     );
 };

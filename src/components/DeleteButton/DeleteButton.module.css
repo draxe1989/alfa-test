@@ -2,19 +2,19 @@
     @apply transition-all transform scale-100 hover:scale-110 active:scale-105;
 }
 
-.trash {
+.delButton > div {
     height: 50px;
     width: 50px;
 }
 
-.trash>div {
+.delButton > div>div {
     height: 100%;
     width: 100%;
 }
-.trash>div>svg {
+.delButton > div>div>svg {
     height: 100%;
     width: 100%;
 }
-.trash>div>svg>path {
+.delButton > div>div>svg>path {
     fill: #d97706;
 }

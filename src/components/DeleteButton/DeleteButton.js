@@ -1,12 +1,12 @@
 import React from 'react';
 import {ReactSVG} from "react-svg";
 import trashSvg from '../../assets/Trash.svg'
-import './DeleteButton.css'
+import s from './DeleteButton.module.css'
 
 const DeleteButton = ({callback}) => {
     return (
-        <button className={'delButton'} onClick={callback}>
-            <ReactSVG className={'trash'} src={trashSvg}/>
+        <button className={s.delButton} onClick={callback}>
+            <ReactSVG src={trashSvg}/>
         </button>
     );
 };

@@ -1,11 +1,12 @@
 import React from 'react';
 import Card from "../Card/Card";
+import s from './CardPage.module.css'
 
 const CardPage = ({cards, isFilterEnable, toggleLike, deleteCard, countImage}) => {
 
     return (
-        <div className={'p-10'}>
-            <div className={'grid grid-cols-4 gap-10'}>
+        <div className={s.cardPage}>
+            <div>
                 {(isFilterEnable && (cards.length > 0)) ?
                     cards.map(card => {
                         return <Card key={card.char_id}

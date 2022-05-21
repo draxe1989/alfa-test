@@ -1,0 +1,7 @@
+.cardPage {
+    @apply p-10;
+}
+
+.cardPage > div {
+    @apply grid grid-cols-4 gap-10;
+}
