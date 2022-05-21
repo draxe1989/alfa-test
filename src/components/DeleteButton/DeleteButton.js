@@ -5,7 +5,7 @@ import './DeleteButton.css'
 
 const DeleteButton = ({callback}) => {
     return (
-        <button className={''} onClick={callback}>
+        <button className={'delButton'} onClick={callback}>
             <ReactSVG className={'trash'} src={trashSvg}/>
         </button>
     );

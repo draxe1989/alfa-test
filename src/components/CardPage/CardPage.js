@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from "../Card/Card";
 
-const CardPage = ({cards, isFilterEnable, toggleLike, deleteCard}) => {
+const CardPage = ({cards, isFilterEnable, toggleLike, deleteCard, countImage}) => {
 
     return (
         <div className={'p-10'}>
@@ -11,13 +11,15 @@ const CardPage = ({cards, isFilterEnable, toggleLike, deleteCard}) => {
                         return <Card key={card.char_id}
                                      card={card}
                                      toggleLike={toggleLike}
-                                     deleteCard={deleteCard}/>
+                                     deleteCard={deleteCard}
+                                     countImage={countImage}/>
                     }) :
                     cards.filter(card => card.isLiked).map(card => {
                         return <Card key={card.char_id}
                                      card={card}
                                      toggleLike={toggleLike}
-                                     deleteCard={deleteCard}/>
+                                     deleteCard={deleteCard}
+                                     />
                     })
                 }
             </div>

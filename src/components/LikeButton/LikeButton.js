@@ -5,8 +5,8 @@ import './LikeButton.css'
 
 const LikeButton = ({callback, isLiked}) => {
     return (
-        <button className={''} onClick={callback}>
-            <ReactSVG className={'h-12 w-12' + (isLiked ? ' withLike': ' withoutLike' )} src={likeSvg}/>
+        <button className={'likeButton'} onClick={callback}>
+            <ReactSVG className={isLiked ? ' withLike': ' withoutLike'} src={likeSvg}/>
         </button>
     );
 };

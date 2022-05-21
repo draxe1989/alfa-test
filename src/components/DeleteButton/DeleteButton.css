@@ -1,7 +1,10 @@
+.delButton {
+    @apply transition-all transform scale-100 hover:scale-110 active:scale-105;
+}
+
 .trash {
     height: 50px;
     width: 50px;
-    margin-right: 25px;
 }
 
 .trash>div {

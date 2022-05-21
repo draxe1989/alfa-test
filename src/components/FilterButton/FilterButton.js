@@ -6,7 +6,7 @@ const FilterButton = ({isFilterEnable, callback}) => {
                 className={'text-6xl font-black text-slate-700'}
                 onClick={callback}
             style={{fontFamily: "breakingBad"}}>
-                Press to <span className={'transition-all border border-slate-700 p-2 rounded-lg hover:bg-amber-500'}>{isFilterEnable ? 'Show Al' : 'Show Lked'}</span>
+                Press to <span className={'transition-all border border-slate-700 p-2 rounded-lg hover:bg-amber-500'}>{isFilterEnable ?'Show Lked': 'Show Al'  }</span>
             </button>
     </div>
     );

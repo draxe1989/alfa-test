@@ -1,7 +1,7 @@
 import FilterButtonContainer from "./components/FilterButton/FilterButtonContainer";
 import CardPageContainer from "./components/CardPage/CardPageContainer";
 import Preloader from "./components/Preloader/Preloader";
-import background from '../src/assets/background.png'
+import background from '../src/assets/background.webp'
 
 function App() {
     return (
